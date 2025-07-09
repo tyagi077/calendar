@@ -1,0 +1,124 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:22px;
+}
+.calendar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr 2fr 2fr 2fr 2fr;
+
+}
+.month-div{
+   border: 1px solid black;
+   padding: 10px;
+   text-align: center;
+   
+}
+.day-div {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: auto;
+  height: 150px;
+  width: 150px;
+  box-sizing: border-box;
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.day-div::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+.task-box {
+  background-color: #007bff;
+  color: white;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.model{
+    display: none;
+}
+
+
+.model form {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+  width: 100%;
+}
+
+.model input,
+.model textarea {
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.model input:focus,
+.model textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  outline: none;
+}
+
+.task-view-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.task-view-box {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 300px;
+  width: 90%;
+  font-family: sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.task-view-buttons {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-box.completed {
+  background-color: #28a745 !important;
+  text-decoration: line-through;
+}
+.day-div.empty{
+background-color: #ebe7e7;
+}
